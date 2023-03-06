@@ -31,7 +31,10 @@ function reducer(state, action) {
 function TodoList() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [items, setItems] = useState('');
+  const inputRef = useRef(null);
+  
 
+  // This fucntion is to add the items entered by the user into the list
   const handleAddToList = () => {
     dispatch({ type: 'ADD_TO_LIST', payload: items });
     setItems('');
@@ -41,18 +44,19 @@ function TodoList() {
     if (e.keyCode === 13) { // check if Enter key was pressed
       handleAddToList();
     }
-  };
+  }; 
 
-  
+  // This function is to toggle the content inside the list
   const handleEditToList = (index) => {
     dispatch({ type: 'EDIT_lIST', payload: index });
   };
-    const inputRef = useRef(null);
-  
+
+  // This function is used to get back the focus to input box.
     const GetBackToWriting = () => {
       inputRef.current.focus();
     };
 
+  // This function is to get the values of the input box
   const handleInputChange = (e) => setItems(e.target.value);
 
   return (
@@ -66,7 +70,6 @@ function TodoList() {
         </div>
       ))}
       <div id='focus-btn-div'><button id='focus' onClick={GetBackToWriting}>Get back to Writing</button></div>
-      
     </div>
   );
 
