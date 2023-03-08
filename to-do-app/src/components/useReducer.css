@@ -1,0 +1,30 @@
+.list {
+    height: 100px;
+    background-color: blueviolet;
+    margin: 16px;
+    display: grid;
+    place-items: center;
+    border-radius: 24px;
+}
+.list span {
+    font-size: 24px;
+    font-weight: 600;
+}
+.list button {
+    background-color: black;
+    color: white;
+    width: 100px;
+    padding: 8px;
+    border-radius: 16px;
+}
+#focus-btn-div {
+    margin-top: 20px;
+}
+#focus{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    height: 40px;
+    border-radius: 16px;
+    border: 1px solid black;
+    padding: 8px;
+}
